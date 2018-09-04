@@ -1,14 +1,46 @@
-$red: #900
-$green: #090
-$blue: #009
+//Imports
+@import url('https://fonts.googleapis.com/css?family=Karla')
 
+//Variables
+$font-family: 'Karla', sans-serif
+$black: #000
+$lightest_gray: #eee
+$lt_gray: #aaa
+$mid_gray: #777
+$red: #900
+
+//Resets
 *
   margin: 0
   padding: 0
-  
-.main
-  background: $red
-  &__h1
-    color: $green
-  &__p
-    color: $blue
+
+body
+  font-family: $font-family
+
+//Custom
+.component
+  border: 1px solid $mid_gray
+  float: left
+  &__title
+    margin: 10px
+
+.dropdown
+  overflow: auto
+  &__submenu
+    width: 100%
+    border: 1px solid $black
+    display: none
+    &__item
+      margin: 2px
+  &:hover 
+    background-color: $lightest_gray
+
+.toggleButton
+  &:hover 
+    background-color: $lightest_gray
+
+.danger
+  color: $red
+
+.grouping
+  background-color: $red
