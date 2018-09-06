@@ -29,7 +29,7 @@ export default class ToggleButton extends React.Component {
 
   render() {
     return(
-      <div className="component" 
+      <div className="component button" 
         onClick={ this.toggleThisButton } 
         onMouseEnter={ () => { this.hoverThisButton('#eee')} } 
         onMouseLeave={ () => { this.hoverThisButton(this.state.previousColor)} }  

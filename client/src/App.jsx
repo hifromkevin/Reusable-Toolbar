@@ -11,25 +11,24 @@ export default class App extends Component {
 
     this.state = {
       page: 'App.jsx',
-      dropdown1: ['First', 'Second', 'Third', 'Fourth Item Goes Hereeeeee'],
-      toggle1: 'align-left', 
-      toggle2: 'align-center',
-      toggle3: 'align-right', 
+      dropdown1: ['First', 'Second', 'Third', 'Fourth Item Goes Hereeeeee'], 
       dropdown2: [['Arial', 'Roboto', 'PT Serif', 'Lobster']],
-      toggleSet: ['bold', 'underline', 'italic']
+      toggleSet: ['bold', 'underline', 'italic'],
+      toggleSet2: ['align-left', 'align-center','align-right']
     }
   }
 
   render() {
     return(
-      <div className="main">
-        <DropdownMenu name={'Fonts'} listItems={['First', 'Second', 'Third', 'Fourth Item Goes Hereeeeee']} onClick={this.toggleThisButton}  />
-        <ToggleButton icon={'align-left'} />
-        <ToggleButton icon={'align-center'} />
-        <ToggleButton icon={'align-right'}  />
-        <DropdownMenu listItems={['First', 'Second', 'Third', 'Fourth Item Goes Hereeeeee']} />
+      <div className="menubar">
         <Grouping buttons={this.state.toggleSet} dropdown={this.state.dropdown2} />
+        <Grouping />
+        <DropdownMenu listItems={this.state.dropdown1} />
+        <Grouping buttons={this.state.toggleSet2} />
+        <ToggleButton icon={this.state.toggleSet2[0]} />
       </div>
     )
   }
 }
+
+//Non-grouped items always fall to the front of the line
