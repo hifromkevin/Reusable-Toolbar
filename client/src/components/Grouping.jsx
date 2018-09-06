@@ -27,12 +27,18 @@ const Grouping = ({buttons, dropdown}) => {
       groupingHolder.push( <DropdownMenu key={i} listItems={dd} /> )
     });
   } else {
-    return <p className="danger"><FontAwesome name={"exclamation-triangle"} /> No Dropdown or Button Found</p>    
+    groupingHolder.push( <p className="danger component"><FontAwesome name={"exclamation-triangle"} /> No Dropdown or Button Found</p>  )  
   }
 
-  return groupingHolder.map((item) => {
-    return item
-  })
+  return (
+    <div className="grouping">
+      {groupingHolder}
+    </div>
+  )
+
+  // return groupingHolder.map((item) => {
+  //   return item
+  // })
 };
 
 export default Grouping;

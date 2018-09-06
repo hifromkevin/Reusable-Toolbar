@@ -1,23 +1,42 @@
-import React from 'react';
+import React, { Component } from 'react';
 import FontAwesome from 'react-fontawesome';
 
 import DropdownListItem from './DropdownListItem.jsx';
 
-const DropdownMenu = ({name, listItems}) => (
-  <div>
-    <div className="dropdown component">
-      <div className="component__title">
-        <p>{listItems[0]} <FontAwesome name='caret-down' /></p>
-      </div>
-    </div>
-    <div className="dropdown__submenu">
-      {listItems.map((item, index) => {
-        return <DropdownListItem key={index} title={item} />
+export default class DropdownMenu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      selectedListItem: props.listItems[0]
+    }
+
+    this.switchDropdownSelected = this.switchDropdownSelected.bind(this);
+  }
+
+  switchDropdownSelected(title) {
+    this.setState({
+      selectedListItem: title
+    });
+  }
+
+  render() {
+    var listItemsHolder = [];
+    {this.props.listItems.map((item, index) => 
+      {
+        listItemsHolder.push( <DropdownListItem key={index} title={item} switchDropdownSelected={this.switchDropdownSelected} /> )
       })
-      }
-    </div>
-  </div>
+    }
 
-);
-
-export default DropdownMenu;
+    return(
+      <div className="dropdown component">
+        <div>
+          <p>{this.state.selectedListItem} <FontAwesome name='caret-down' /></p>
+        </div>
+        <div className="dropdown__list">
+          {listItemsHolder}
+        </div>
+      </div>
+    );
+  }
+}
