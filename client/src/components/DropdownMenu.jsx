@@ -22,8 +22,7 @@ export default class DropdownMenu extends Component {
 
   render() {
     var listItemsHolder = [];
-    {this.props.listItems.map((item, index) => 
-      {
+    {this.props.listItems.map((item, index) => {
         listItemsHolder.push( <DropdownListItem key={index} title={item} switchDropdownSelected={this.switchDropdownSelected} /> )
       })
     }
