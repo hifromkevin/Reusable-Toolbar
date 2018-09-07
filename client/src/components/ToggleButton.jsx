@@ -14,7 +14,12 @@ export default class ToggleButton extends React.Component {
   render() {
     return(
       <div className="component button">
-        <div className="" ><FontAwesome name={this.props.icon} /> {this.props.text} <FontAwesome name={this.props.icon2} /></div>
+      {console.log(this.props)}
+        <div className="" >
+          <FontAwesome name={this.props.icon.icon1} /> 
+          {this.props.icon.text} 
+          <FontAwesome name={this.props.icon.icon2} />
+        </div>
       </div>
     )
   }
