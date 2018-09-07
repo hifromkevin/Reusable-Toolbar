@@ -1,7 +1,7 @@
 # Reusable-Toolbar
 A toolbar with components that can be utilized to create a reusable toolbar.
 
-(reusable-toolbar.png?raw=true)
+![Reusable Toolbar](reusable-toolbar.png?raw=true)
 
 ## Requirements
 - NPM 6.13.0
@@ -183,7 +183,7 @@ export default class App extends Component {
   ```
 
 The preceeding code would produce:
-(results.png?raw=true)
+![Results for preceeding code](results.png?raw=true)
 
 ### Wait.. I see I can add icons to my buttons. How do I do it?
 Glad you asked! The icons on the buttons are created using Font Awesome. While this application uses the free version of Font Awesome, you are almost certain to find what you are looking for here: https://fontawesome.com/icons?d=gallery&m=free
