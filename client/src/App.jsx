@@ -10,9 +10,6 @@ export default class App extends Component {
     super(props);
 
     this.state = {
-      page: 'App.jsx',
-      dropdown1: ['First', 'Second', 'Third', 'Fourth Item Goes Hereeeeee'], 
-      dropdown2: [['Arial', 'Roboto', 'PT Serif', 'Lobster']],
       toggleSet: [
         {
           icon1: 'bold'
@@ -50,20 +47,43 @@ export default class App extends Component {
         {
           text: 'Text Buttons'
         }
+      ],
+      buttons1: [
+        { icon1: 'bold' }, 
+        { icon2: 'underline' }, 
+        { icon1: 'italic' }
+      ],
+      buttons2: [
+        { icon1: 'align-left' }, 
+        { icon1: 'align-center' },
+        { icon1: 'align-right' }
+      ],
+      dropdown1: [['First', 'Second', 'Third']], 
+      dropdown2: [
+        ['Arial', 'Roboto', 'PT Serif', 'Lobster'], 
+        ['Red', 'Blue', 'Orange', 'Green']
       ]
     }
   }
 
   render() {
     return(
+      <div>
+        <div className="menubar">
+          <Grouping buttons={this.state.toggleSet} dropdown={this.state.dropdown2} />
+          <Grouping />
+          <Grouping buttons={this.state.toggleSet2} />
+          <ToggleButton icon={this.state.toggleSet2[0]} />
+          <ToggleButton icon={''} text={'ohai'} />
+          <Grouping buttons={this.state.toggle3} />
+        </div>
+
       <div className="menubar">
-        <Grouping buttons={this.state.toggleSet} dropdown={this.state.dropdown2} />
-        <Grouping />
-        <DropdownMenu listItems={this.state.dropdown1} />
-        <Grouping buttons={this.state.toggleSet2} />
-        <ToggleButton icon={this.state.toggleSet2[0]} />
-        <ToggleButton icon={''} text={'ohai'} />
-        <Grouping buttons={this.state.toggle3} />
+        <Grouping buttons={ this.state.buttons1 } dropdown={ this.state.dropdown1 } /> 
+        <Grouping buttons={ this.state.buttons2 } /> 
+        <Grouping dropdown={ this.state.dropdown2 } /> 
+        <Grouping /> 
+      </div>
       </div>
     )
   }
