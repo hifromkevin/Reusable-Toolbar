@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Reusable components that can be utilized to create a custom toolbar",
   "main": "webpack.config.js",
+  "engines": {
+    "npm": "5.6.0",
+    "node": "10.2.1"
+  },
   "scripts": {
     "start": "webpack-dev-server"
   },
