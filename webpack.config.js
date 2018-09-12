@@ -46,7 +46,7 @@ module.exports = {
   devServer: {
     contentBase: DIST_DIR,
     compress: true,
-    port: 9000
+    port: process.env.PORT || 9000
   }
 };
 
